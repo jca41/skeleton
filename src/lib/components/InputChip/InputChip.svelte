@@ -67,11 +67,11 @@
 		if (!inputValue) return false;
 		// Custom validation
 		if (validation !== undefined && !validation(inputValue)) return false;
-		// Maxiumum
+		// Maximum
 		if (max !== -1 && value.length >= max) return false;
 		// Minimum Character Length
 		if (minlength !== -1 && inputValue.length < minlength) return false;
-		// Maxiumum Character Length
+		// Maximum Character Length
 		if (maxlength !== -1 && inputValue.length > maxlength) return false;
 		// Whitelist (if available)
 		if (whitelist.length > 0 && !whitelist.includes(inputValue)) return false;
@@ -117,7 +117,7 @@
 <div class="input-chip {classesBase}" class:opacity-50={$$restProps.disabled}>
 	<!-- NOTE: Don't use `hidden` as it prevents `required` from operating -->
 	<div class="h-0 overflow-hidden">
-		<select bind:value {name} multiple {required}>
+		<select bind:value on:change {name} multiple {required}>
 			<!-- NOTE: options are required! -->
 			{#each value as option}<option value={option}>{option}</option>{/each}
 		</select>
